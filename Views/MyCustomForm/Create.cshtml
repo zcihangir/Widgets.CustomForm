@@ -1,0 +1,352 @@
+﻿@model Widgets.CustomForm.Models.CustomFormModel
+
+@{
+    Layout = "_SingleColumn";
+}
+
+
+<link rel="stylesheet" type="text/css" asp-src="/Plugins/Widgets.CustomForm/Assets/widget_component.css" />
+
+<div>
+    <validation-observer v-slot="{ handleSubmit }">
+        <form asp-route="Plugin.Widgets.CustomForm.Create" onsubmit="form_request_form_stopMultipleSubmit()"
+                method="post" id="form-request-form" ref="form" class="contact-form">
+            <div class="myCustomFormContainer">
+                <div class="popl_container">
+
+                   
+
+                    <div class="form_fields_wrapper">
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                    @Loc["Widgets.CustomForm.Fields.FullName"]
+                                    <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="FullName" v-slot="{ errors, classes }">
+                                <input asp-for="FullName" v-model="vueCustomForm.FullName"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.FullName"]" 
+                                       v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="FullName"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.Age"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="Age" v-slot="{ errors, classes }">
+                                <input asp-for="Age" v-model="vueCustomForm.Age"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.Age"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="Age"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.LevelOfEducation"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="LevelOfEducation" v-slot="{ errors, classes }">
+                                <input asp-for="LevelOfEducation" v-model="vueCustomForm.LevelOfEducation"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.LevelOfEducation"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="LevelOfEducation"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.FieldOfStudy"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="FieldOfStudy" v-slot="{ errors, classes }">
+                                <input asp-for="FieldOfStudy" v-model="vueCustomForm.FieldOfStudy"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.FieldOfStudy"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="FieldOfStudy"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.Address"]
+                                <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="Address" v-slot="{ errors, classes }">
+                                <input asp-for="Address" v-model="vueCustomForm.Address"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.Address"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="Address"></span>
+                            </validation-provider>
+                        </div>
+
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.Job"]
+                                <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="Job" v-slot="{ errors, classes }">
+                                <input asp-for="Job" v-model="vueCustomForm.Job"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.Job"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="Job"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.JobExperience"]
+                                <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="JobExperience" v-slot="{ errors, classes }">
+                                <input asp-for="JobExperience" v-model="vueCustomForm.JobExperience"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.JobExperience"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="JobExperience"></span>
+                            </validation-provider>
+                        </div>
+
+
+
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.WorkAddress"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="WorkAddress" v-slot="{ errors, classes }">
+                                <input asp-for="WorkAddress" v-model="vueCustomForm.WorkAddress"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.WorkAddress"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="WorkAddress"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.WorkTel"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="WorkTel" v-slot="{ errors, classes }">
+                                <input asp-for="WorkTel" v-model="vueCustomForm.WorkTel"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.WorkTel"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="WorkTel"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.BusinessWebsite"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="BusinessWebsite" v-slot="{ errors, classes }">
+                                <input asp-for="BusinessWebsite" v-model="vueCustomForm.BusinessWebsite"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.BusinessWebsite"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="BusinessWebsite"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.InstagramChannel"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="InstagramChannel" v-slot="{ errors, classes }">
+                                <input asp-for="InstagramChannel" v-model="vueCustomForm.InstagramChannel"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.InstagramChannel"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="InstagramChannel"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.WhoDidYouGetToKnowZAP"]
+                                <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="WhoDidYouGetToKnowZAP" v-slot="{ errors, classes }">
+                                <input asp-for="WhoDidYouGetToKnowZAP" v-model="vueCustomForm.WhoDidYouGetToKnowZAP"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.WhoDidYouGetToKnowZAP"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="WhoDidYouGetToKnowZAP"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.StrengthAndWeakness"]
+                                
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="StrengthAndWeakness" v-slot="{ errors, classes }">
+                                
+
+                                <textarea asp-for="StrengthAndWeakness" v-model="vueCustomForm.StrengthAndWeakness"
+                                          placeholder="@Loc["Widgets.CustomForm.Fields.StrengthAndWeakness"]" 
+                                          v-bind:class="[classes , 'form-control','form-control-textarea']"></textarea>
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="StrengthAndWeakness"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.EstimateOfSell"]
+                                <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="EstimateOfSell" v-slot="{ errors, classes }">
+                                <input asp-for="EstimateOfSell" v-model="vueCustomForm.EstimateOfSell"
+                                       placeholder="@Loc["Widgets.CustomForm.Fields.EstimateOfSell"]" v-bind:class="[classes , 'form-control']" />
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="EstimateOfSell"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.SellPromotionalProgram"]
+                                <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="SellPromotionalProgram" v-slot="{ errors, classes }">
+                               
+                                <textarea asp-for="SellPromotionalProgram" v-model="vueCustomForm.SellPromotionalProgram"
+                                          placeholder="@Loc["Widgets.CustomForm.Fields.SellPromotionalProgram"]" 
+                                          v-bind:class="[classes , 'form-control', 'form-control-textarea']"></textarea>
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="SellPromotionalProgram"></span>
+                            </validation-provider>
+                        </div>
+
+                        <div class="my_form_input">
+                            <label class="form-request-form-label">
+                                @Loc["Widgets.CustomForm.Fields.WantedCities"]
+                                <span class="my_required_star">*</span>
+                            </label>
+
+                            <validation-provider tag="div" rules="required" name="WantedCities" v-slot="{ errors, classes }">
+                                
+                                <textarea asp-for="WantedCities" v-model="vueCustomForm.WantedCities"
+                                          placeholder="@Loc["Widgets.CustomForm.Fields.WantedCities"]" 
+                                          v-bind:class="[classes , 'form-control', 'form-control-textarea']"></textarea>
+
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+
+                                <span asp-validation-for="WantedCities"></span>
+                            </validation-provider>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="submint-container">
+                        <div class="captcha-box">
+                            <captcha />
+                        </div>
+
+                        <input type="submit"
+                               class="submit l-btn" id="form-request-form-submit-button" value="@Loc["Widgets.CustomForm.SendButton"]">
+
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+    </validation-observer>
+</div>
+
+<script asp-location="Footer" asp-order="300">
+    var vueCustomForm = new Vue({
+        data: () => ({
+    @{
+        <text>
+            FullName: '@Html.Raw(Model==null ? "" : Model.FullName)',
+            Age: '@Html.Raw(Model==null ? "" : Model.Age)',
+            LevelOfEducation: '@Html.Raw(Model==null ? "" : Model.LevelOfEducation)',
+            FieldOfStudy: '@Html.Raw(Model==null ? "" : Model.FieldOfStudy)',
+            Address: '@Html.Raw(Model==null ? "" : Model.Address)',
+            Job: '@Html.Raw(Model==null ? "" : Model.Job)',
+            JobExperience: '@Html.Raw(Model==null ? "" : Model.JobExperience)',
+            WorkAddress: '@Html.Raw(Model==null ? "" : Model.WorkAddress)',
+            WorkTel: '@Html.Raw(Model==null ? "" : Model.WorkTel)',
+            BusinessWebsite: '@Html.Raw(Model==null ? "" : Model.BusinessWebsite)',
+            InstagramChannel: '@Html.Raw(Model==null ? "" : Model.InstagramChannel)',
+            WhoDidYouGetToKnowZAP: '@Html.Raw(Model==null ? "" : Model.WhoDidYouGetToKnowZAP)',
+
+            StrengthAndWeakness: '@Html.Raw(Model==null ? "" : Model.StrengthAndWeakness)',
+            EstimateOfSell: '@Html.Raw(Model==null ? "" : Model.EstimateOfSell)',
+            SellPromotionalProgram: '@Html.Raw(Model==null ? "" : Model.SellPromotionalProgram)',
+            WantedCities: '@Html.Raw(Model==null ? "" : Model.WantedCities)',
+
+        </text>
+    }
+                                        })
+                                    });
+
+
+    var form_form_isSubmitted = false;
+    function form_request_form_stopMultipleSubmit() {
+        if (!form_form_isSubmitted) {
+
+            //$('#btnSubmit').val('Submitting.. Please Wait..');
+            var btn = document.getElementById('form-request-form-submit-button');
+            btn.setAttribute('disabled', '');
+
+            form_form_isSubmitted = true;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>

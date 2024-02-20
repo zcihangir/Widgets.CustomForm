@@ -1,0 +1,99 @@
+﻿
+.myCustomFormContainer {
+    padding-bottom: 40px;
+}
+
+.CustomForm__head {
+    text-align: left;
+}
+
+html[dir=rtl] .CustomForm__head {
+    text-align: right;
+}
+
+.CustomForm__head .CustomForm__head_item {
+    display: block;
+}
+
+.myCustomFormContainer .form_fields_wrapper {
+    margin-top: 20px;
+}
+
+
+
+.myCustomFormContainer .my_form_input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+    .myCustomFormContainer .my_form_input div {
+        flex: 1;
+    }
+
+    .myCustomFormContainer .my_form_input .form-control {
+        max-width: 300px;
+        border-radius: 50%;
+        border-radius: 20px;
+    }
+
+    .myCustomFormContainer .my_form_input .form-control-textarea {
+        max-width: 400px;
+        border-radius: 15px;
+    }
+
+    .myCustomFormContainer .my_form_input .field-validation-error {
+        color: red;
+    }
+
+html[dir=rtl] .myCustomFormContainer .my_form_input {
+    text-align: right;
+}
+
+
+
+.myCustomFormContainer .form-request-form-label {
+    width: 30%;
+    max-width: 200px;
+    margin-left: unset;
+    margin-right: 10px;
+    text-align: right;
+}
+
+html[dir=rtl] .myCustomFormContainer .form-request-form-label {
+    text-align: right;
+    margin-left: 10px;
+    margin-right: unset;
+    text-align: left;
+}
+
+
+
+.myCustomFormContainer .my_required_star {
+    color: red;
+}
+
+
+
+.myCustomFormContainer .submint-container {
+    max-width: 400px;
+    margin-left: 210px;
+    margin-right: unset;
+    text-align: right;
+}
+
+html[dir=rtl] .myCustomFormContainer .submint-container {
+    margin-right: 210px;
+    margin-left: unset;
+    text-align: left;
+}
+
+.myCustomFormContainer .submint-container .submit {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    min-width: 130px;
+    font-weight: bold;
+}
